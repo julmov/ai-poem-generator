@@ -21,8 +21,6 @@ let poemElement = document.querySelector("#poem");
 poemElement.classList.remove("hidden");
 poemElement.innerHTML = `<div class="blink">⌛ Generating a French poem about ${instructionsInput.value}</div>`; 
 
-console.log(`Prompt is: ${prompt}`)
-console.log(`Context is: ${context}`);
 
 axios.get(apiUrl).then(displayPoem);
 
