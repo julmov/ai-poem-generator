@@ -17,13 +17,18 @@ let prompt = `User instructions: Generate a French poem about ${instructionsInpu
 let context = "You are romantic poem expert and love to write short poems. Your mission is to generate a 4 line poem in basic HTML but dont display that this is html. Make sure to follow user instructions.";
 let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+let poemElement = document.querySelector("#poem");
+poemElement.classList.remove("hidden");
+poemElement.innerHTML = `<div class="blink">⌛ Generating a French poem about ${instructionsInput.value}</div>`; 
+
 console.log(`Prompt is: ${prompt}`)
 console.log(`Context is: ${context}`);
 
 axios.get(apiUrl).then(displayPoem);
 
 event.preventDefault();
-let poemElement = document.querySelector("#poem");
+
+
 
 
 }
